@@ -21,12 +21,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         parser = new Parser(
-                "https://www.google.co.kr/#newwindow=1&q=%EC%84%9C%EC%9A%B8+%EC%98%A8%EB%8F%84"
-                , "div", new SFCallback() {
+                "https://m.search.naver.com/search.naver?query=%EB%B6%84%EB%8B%B9+%EB%82%A0%EC%94%A8&where=m&sm=mtp_hty"
+                , "p[class=main_temp f_light]", new SFCallback() {
             @Override
             public void callback() {
                 runOnUiThread (new Thread(new Runnable() {
                     public void run() {
+                        parser.setResult_b();
                         _textview.setText(parser.getResult());
                     }
                 }));

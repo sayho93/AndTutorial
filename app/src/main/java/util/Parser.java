@@ -20,7 +20,7 @@ public class Parser {
         thread.start();
         this.callback = callback;
     }
-
+    public void setResult_b() { result="분당 날씨 -" + result; }
     public String getResult(){
         return result;
     }
